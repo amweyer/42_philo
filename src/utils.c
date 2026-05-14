@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 14:33:27 by amweyer           #+#    #+#             */
-/*   Updated: 2025/09/25 11:59:25 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/09/26 12:22:59 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,20 +76,6 @@ int	print_status(t_philo *philo, char *status)
 	timestamp = get_current_time();
 	if (check_dead(philo) == 1)
 		return (1);
-
-	pthread_mutex_lock(philo->write_lock);
-	printf("%ld %d %s\n", timestamp, philo->id, status);
-	pthread_mutex_unlock(philo->write_lock);
-	return (0);
-}
-
-
-
-int	print_status_bis(t_philo *philo, char *status)
-{
-	size_t	timestamp;
-
-	timestamp = get_current_time();
 	pthread_mutex_lock(philo->write_lock);
 	printf("%ld %d %s\n", timestamp, philo->id, status);
 	pthread_mutex_unlock(philo->write_lock);

@@ -6,7 +6,7 @@
 #    By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/29 15:01:22 by amweyer           #+#    #+#              #
-#    Updated: 2025/09/24 16:35:28 by amweyer          ###   ########.fr        #
+#    Updated: 2025/09/26 12:36:01 by amweyer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ OBJS := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # Compiler
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -pthread -g #-fsanitize=thread
+CFLAGS = -Wall -Werror -Wextra -pthread #-g #-fsanitize=thread
 CPPFLAGS = -I $(INC_DIR) 
 
 # Commands

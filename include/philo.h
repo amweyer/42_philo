@@ -6,7 +6,7 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 15:56:05 by amweyer           #+#    #+#             */
-/*   Updated: 2025/09/25 18:19:01 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/09/26 12:12:19 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,10 @@ int						myusleep(t_philo *philo, unsigned long time);
 int						is_philo_dead(t_data *data);
 
 /* eat_utils.c */
+int						safe_unlock(pthread_mutex_t *f1, pthread_mutex_t *f2);
 int						take_forks(t_philo *philo);
 int						do_eat(t_philo *philo);
 int						have_philos_finish(t_data *data);
+void					unlock_forks(t_philo *philo);
 
 #endif

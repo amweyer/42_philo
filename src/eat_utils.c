@@ -6,13 +6,13 @@
 /*   By: amweyer <amweyer@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/23 12:38:58 by amweyer           #+#    #+#             */
-/*   Updated: 2025/09/25 18:18:23 by amweyer          ###   ########.fr       */
+/*   Updated: 2025/09/26 12:11:33 by amweyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static void	unlock_forks(t_philo *philo)
+void	unlock_forks(t_philo *philo)
 {
 	if (philo->id % 2 == 0)
 	{
@@ -26,7 +26,7 @@ static void	unlock_forks(t_philo *philo)
 	}
 }
 
-static int	safe_unlock(pthread_mutex_t *f1, pthread_mutex_t *f2)
+int	safe_unlock(pthread_mutex_t *f1, pthread_mutex_t *f2)
 {
 	pthread_mutex_unlock(f1);
 	if (f2)
